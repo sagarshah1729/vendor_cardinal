@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2012-2013 SlimRoms Project
-
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
           http://www.apache.org/licenses/LICENSE-2.0
-
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -23,12 +20,22 @@
         <item>com.google.android.gms</item>
     </string-array>
 
-    <!-- Disable stock OTA components if installed
+    <!-- Disable stock OTA components if installed -->
     <string-array name="config_disabledComponents" translatable="false">
         <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateActivity</item>
-        <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService</item>
         <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService$Receiver</item>
-    </string-array>-->
+        <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService$SecretCodeReceiver</item>
+        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateActivity</item>
+        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$Receiver</item>
+        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$ActiveReceiver</item>
+        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$SecretCodeReceiver</item>
+    </string-array>
+    
+    <!-- Force enabling of some services that could have been previously disabled -->
+    <string-array name="config_forceEnabledComponents" translatable="false">
+        <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService</item>
+        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService</item>
+      </string-array>
 
     <string name="config_mms_user_agent">"Android-Mms/2.0"</string>
     <string name="config_mms_user_agent_profile_url">http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
@@ -43,4 +50,3 @@
     </string-array -->
 
 </resources>
-
