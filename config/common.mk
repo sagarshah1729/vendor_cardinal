@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -52,6 +53,113 @@ PRODUCT_COPY_FILES += \
 # Layers Manager
 PRODUCT_COPY_FILES += \
 vendor/cardinal/prebuilt/common/app/LayersManager/layersmanager.apk:system/app/LayersManager/layersmanager.apk
+=======
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+
+ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.clientidbase=android-google
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
+endif
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    keyguard.no_require_sim=true \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+    ro.com.android.wifi-watchlist=GoogleGuest \
+    ro.setupwizard.enterprise_mode=1 \
+    ro.com.android.dateformat=MM-dd-yyyy \
+    ro.com.android.dataroaming=false
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.selinux=1
+
+# Disable excessive dalvik debug messages
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.debug.alloc=0
+
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/cardinal/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/cardinal/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/cardinal/prebuilt/common/bin/50-cardinal.sh:system/addon.d/50-cardinal.sh
+
+# Signature compatibility validation
+PRODUCT_COPY_FILES += \
+    vendor/cardinal/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
+
+# CARDINSL-specific init file
+PRODUCT_COPY_FILES += \
+    vendor/cardinal/prebuilt/common/etc/init.local.rc:root/init.aospb.rc
+
+# Copy latinime for gesture typing
+PRODUCT_COPY_FILES += \
+    vendor/cardinal/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+
+# SELinux filesystem labels
+PRODUCT_COPY_FILES += \
+    vendor/cardinal/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+
+# Enable SIP+VoIP on all targets
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+
+# Don't export PS1 in /system/etc/mkshrc.
+PRODUCT_COPY_FILES += \
+    vendor/cardinal/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
+    vendor/cardinal/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
+
+PRODUCT_COPY_FILES += \
+    vendor/cardinal/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/cardinal/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/cardinal/prebuilt/common/bin/sysinit:system/bin/sysinit
+
+# Required packages
+PRODUCT_PACKAGES += \
+    CellBroadcastReceiver \
+	Camera2 \
+    su \
+	Eleven \
+	CMFileManager \
+    Trebuchet	
+	
+# AudioFX
+PRODUCT_PACKAGES += \
+    AudioFX
+
+# Extra Optional packages
+PRODUCT_PACKAGES += \
+    LatinIME \
+    BluetoothExt
+
+# Extra tools
+PRODUCT_PACKAGES += \
+    openvpn \
+    e2fsck \
+    mke2fs \
+    tune2fs \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
+    ntfsfix \
+    ntfs-3g
+
+# Stagefright FFMPEG plugin
+PRODUCT_PACKAGES += \
+    libffmpeg_extractor \
+    libffmpeg_omx \
+    media_codecs_ffmpeg.xml
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.sf.omx-plugin=libffmpeg_omx.so \
+    media.sf.extractor-plugin=libffmpeg_extractor.so
+ 
+# Layers Manager
+PRODUCT_COPY_FILES += \
+vendor/cardinal/prebuilt/common/app/LayersManager/layersmanager.apk:system/app/LayersManager/layersmanager.apk
+>>>>>>> 58de194... [SQUASH][2/3]vendor: Changelog
 
 # Layers Backup
 PRODUCT_COPY_FILES += \
