@@ -118,8 +118,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # SuperSU
 PRODUCT_COPY_FILES += \
+<<<<<<< HEAD
    vendor/cardinal/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
    vendor/cardinal/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
+# Layers Manager
+PRODUCT_COPY_FILES += \
+vendor/cardinal/prebuilt/common/app/LayersManager/layersmanager.apk:system/app/LayersManager/layersmanager.apk
 
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
