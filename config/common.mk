@@ -157,4 +157,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.cardinal.buildtype=$(CARDINAL_BUILD_TYPE)
 
 EXTENDED_POST_PROCESS_PROPS := vendor/cardinal/tools/cardinal_process_props.py
-
