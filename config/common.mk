@@ -184,10 +184,20 @@ CARDINAL_VERSION := Cardinal-AOSP-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MIN
 CARDINAL_MOD_VERSION := Cardinal-AOSP-$(PRODUCT_VERSION_MINOR)-$(CARDINAL_BUILD_TYPE)$(CARDINAL_POSTFIX)
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
+<<<<<<< HEAD
     cardinal.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
     ro.cardinal.version=$(CARDINAL_VERSION) \
     ro.modversion=$(CARDINLA_MOD_VERSION) \
     ro.cardinal.buildtype=$(CARDINAL_BUILD_TYPE)
 
 EXTENDED_POST_PROCESS_PROPS := vendor/cardinal/tools/cardinal_process_props.py
+=======
+    orion.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
+    ro.orion.version=$(ORION_VERSION) \
+    ro.modversion=$(ORION_MOD_VERSION) \
+    ro.orion.buildtype=$(ORION_BUILD_TYPE)
+
+EXTENDED_POST_PROCESS_PROPS := vendor/orion/tools/orion_process_props.py
+
+>>>>>>> 5c89344... Switch to uber toolchains
 
