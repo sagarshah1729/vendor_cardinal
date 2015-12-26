@@ -90,6 +90,15 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt
 
+# Proprietary latinime libs needed for Keyboard swyping
+ifneq ($(filter arm64,$(TARGET_ARCH)),)
+PRODUCT_COPY_FILES += \
+    vendor/aosp/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+else
+PRODUCT_COPY_FILES += \
+    vendor/aosp/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+endif
+  
 # Extra tools
 PRODUCT_PACKAGES += \
     openvpn \
