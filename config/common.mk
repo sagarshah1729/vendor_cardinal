@@ -126,6 +126,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 vendor/cardinal/prebuilt/common/app/LayersManager/layersmanager.apk:system/app/LayersManager/layersmanager.apk
 
+# Layers Backup
+PRODUCT_COPY_FILES += \
+    vendor/cardinal/prebuilt/common/bin/71-layers.sh:system/addon.d/71-layers.sh
+ 
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
 
