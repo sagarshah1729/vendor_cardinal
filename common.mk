@@ -16,6 +16,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/cardinal/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/cardinal/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/cardinal/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
+    vendor/cardinal/prebuilt/common/bin/whitelist:system/addon.d/whitelist \
+
 # Bootanimation
 PRODUCT_COPY_FILES += \
     vendor/cardinal/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
