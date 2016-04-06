@@ -16,6 +16,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/cardinal/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/cardinal/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/cardinal/prebuilt/common/bin/50-cardinal.sh:system/addon.d/50-cardinal.sh
+
 # Bootanimation
 PRODUCT_COPY_FILES += \
     vendor/cardinal/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
@@ -81,6 +87,16 @@ PRODUCT_PACKAGES += \
     sqlite3 \
     strace \
     Terminal
+	
+# Required packages
+PRODUCT_PACKAGES += \
+	Camera2 \
+	Eleven  \
+	messaging
+	
+# AudioFX
+PRODUCT_PACKAGES += \
+    AudioFX
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
@@ -134,5 +150,44 @@ endif
 
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
-PRODUCT_PACKAGES += \
-	messaging
+PRODUCT_PACKAGE_OVERLAYS += vendor/cardinal/overlay/common
+
+# Versioning System
+# Cardinal-AOSP first version.
+PRODUCT_VERSION_MAJOR = 6.0.1
+PRODUCT_VERSION_MINOR = BETA
+PRODUCT_VERSION_MAINTENANCE = 1.0
+ifdef CARDINAL_BUILD_EXTRA
+    CARDINAL_POSTFIX := -$(CARDINAL_BUILD_EXTRA)
+endif
+ifndef CARDINAL_BUILD_TYPE
+ifeq ($(CARDINAL_RELEASE),true)
+    CARDINAL := OFFICIAL
+    PLATFORM_VERSION_CODENAME := OFFICIAL
+    CARDINAL_POSTFIX := -$(shell date +"%Y%m%d")
+else
+    CARDINAL_BUILD_TYPE := UNOFFICIAL
+    PLATFORM_VERSION_CODENAME := UNOFFICIAL
+	CARDINAL_POSTFIX := -$(shell date +"%Y%m%d")
+endif
+endif
+
+ifeq ($(CARDINAL_BUILD_TYPE),DM)
+    CARDINAL_POSTFIX := -$(shell date +"%Y%m%d")
+endif
+
+ifndef CARDINAL_POSTFIX
+    CARDINAL_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
+endif
+
+PLATFORM_VERSION_CODENAME := $(CARDINAL_BUILD_TYPE)
+
+# Set all versions
+CARDINAL_VERSION := Cardinal-AOSP-$(PRODUCT_VERSION_MINOR)-$(CARDINAL_BUILD_TYPE)$(CARDINAL_POSTFIX)
+CARDINAL_MOD_VERSION := Cardinal-AOSP-$(CARDINAL_BUILD)-$(PRODUCT_VERSION_MINOR)-$(CARDINAL_BUILD_TYPE)$(CARDINAL_POSTFIX)
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    BUILD_DISPLAY_ID=$(BUILD_ID) \
+    ro.cardinal.version=$(CARDINAL_VERSION) \
+    ro.modversion=$(CARDINAL_MOD_VERSION) \
+    ro.cardinal.buildtype=$(CARDINAL_BUILD_TYPE)
