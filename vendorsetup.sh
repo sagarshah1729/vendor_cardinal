@@ -1,3 +1,3 @@
-. "$(gettop)/vendor/aospb/build/envsetup.sh"
+. "$(gettop)/vendor/cardinal/build/envsetup.sh"
 
-aospb_device_combos
+cardinal_device_combos
