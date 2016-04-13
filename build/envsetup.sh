@@ -1,9 +1,10 @@
-# cardinal functions that extend build/envsetup.sh
+# Cardinal-AOSP functions that extend build/envsetup.sh
+
 
 function cardinal_device_combos()
 {
     local T list_file variant device
-	
+
     T="$(gettop)"
     list_file="${T}/vendor/cardinal/cardinal.devices"
     variant="userdebug"
@@ -38,17 +39,17 @@ function cardinal_device_combos()
 }
 
 function cardinal_rename_function()
-}
-    eval "original_cardinal_$(declare -f ${1})"}
+{
+    eval "original_cardinal_$(declare -f ${1})"
 }
 
 function cardinal_add_hmm_entry()
-}
+{
     f_name="${1}"
     f_desc="${2}"
 }
 
-function _cardinal_append_hmm() #hidden
+function _cardinal_build_hmm() #hidden
 {
     printf "%-8s %s" "${1}:" "${2}"
 }
