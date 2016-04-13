@@ -67,6 +67,13 @@ PRODUCT_PACKAGES += \
     SpareParts \
     su
 
+# Cardinal includes
+PRODUCT_PACKAGES += \
+   Eleven \
+   CMFileManager \
+   Camera2 \
+   Launcher3
+
 # Optional packages
 PRODUCT_PACKAGES += \
     Basic \
