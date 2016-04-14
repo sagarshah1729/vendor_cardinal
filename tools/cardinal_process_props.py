@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # Copyright (C) 2009 The Android Open Source Project
-# Copyright (C) 2014 SlimRoms Project
+# Copyright (C) 2014 OrionLP Project
 # Copyright (C) 2016 Cardinal-AOSP Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +35,8 @@ def mangle_lcd_prop(prop):
         new_lcd = lcd_changer.get(lcd, lcd)
     if new_lcd != '':
         prop.put('persist.sys.lcd_density', new_lcd)
-		prop.put('ro.cardinal.lcd_density', new_lcd)
+        prop.put('ro.cardinal.lcd_density', new_lcd)
+
 
 def mangle_build_prop(prop):
     mangle_lcd_prop(prop)
