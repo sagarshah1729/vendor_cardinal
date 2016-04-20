@@ -134,8 +134,11 @@ endif
 
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
+# Cardinal-AOSP includes
 PRODUCT_PACKAGES += \
-	messaging
+	messaging \
+	Eleven \
+	Camera2
 
 # Versioning System
 # Cardinal-AOSP first version
