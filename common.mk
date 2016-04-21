@@ -151,6 +151,10 @@ PRODUCT_PACKAGES += \
 	Eleven \
 	Camera2
 
+# CardinalOTA
+PRODUCT_PACKAGES += \
+CardinalOTA
+
 # Versioning System
 # Cardinal-AOSP first version
 PRODUCT_VERSION_MAJOR = 6.0.1
