@@ -118,7 +118,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # SuperSU
 PRODUCT_COPY_FILES += \
-<<<<<<< HEAD
    vendor/cardinal/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
    vendor/cardinal/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
@@ -129,13 +128,18 @@ vendor/cardinal/prebuilt/common/app/LayersManager/layersmanager.apk:system/app/L
 # Layers Backup
 PRODUCT_COPY_FILES += \
     vendor/cardinal/prebuilt/common/bin/71-layers.sh:system/addon.d/71-layers.sh
- 
+
+# MiXplorer
+PRODUCT_COPY_FILES += \
+vendor/cardinal/prebuilt/common/app/MiXplorer/mixplorer.apk:system/app/MiXplorer/mixplorer.apk \
+vendor/cardinal/prebuilt/common/bin/72-mixplorer.sh:system/addon.d/72-mixplorer.sh
+
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/cardinal/overlay/common
 
-#Bootanimation
+# Bootanimation
 PRODUCT_COPY_FILES += \
     vendor/cardinal/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
 
