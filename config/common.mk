@@ -66,11 +66,15 @@ PRODUCT_PACKAGES += \
     SpareParts \
     su
 
-# Optional packages
+# Cardinal Includes
 PRODUCT_PACKAGES += \
-    Basic \
-    LiveWallpapersPicker \
-    PhaseBeam
+	Launcher3 \
+	Camera2 \
+	messaging
+
+# CardinalOTA
+PRODUCT_PACKAGES += \
+	CardinalOTA
 
 # AudioFX
 PRODUCT_PACKAGES += \
@@ -83,7 +87,6 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    SlimLauncher \
     LatinIME \
     BluetoothExt
 
