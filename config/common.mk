@@ -32,7 +32,7 @@ PRODUCT_COPY_FILES += \
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
-    vendor/cqrdinal/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
+    vendor/cardinal/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
 # Cardinal-AOSP-specific init file
 PRODUCT_COPY_FILES += \
