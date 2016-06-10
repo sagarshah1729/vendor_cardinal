@@ -4,7 +4,7 @@
 
 . $ANDROID_BUILD_TOP/vendor/cardinal/tools/colors
 
-export Changelog=/tmp/Changelog.txt
+export Changelog=Changelog.txt
 
 if [ -f $Changelog ];
 then
