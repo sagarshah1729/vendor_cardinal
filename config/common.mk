@@ -70,7 +70,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	Launcher3 \
 	Camera2 \
-	messaging
+	messaging \
+	Eleven
 
 # CardinalOTA
 PRODUCT_PACKAGES += \
