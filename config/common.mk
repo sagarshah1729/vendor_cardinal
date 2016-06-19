@@ -100,6 +100,9 @@ PRODUCT_COPY_FILES += \
     vendor/cardinal/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
 endif
   
+## Slim Framework
+include frameworks/opt/slim/slim_framework.mk
+
 # Extra tools
 PRODUCT_PACKAGES += \
     openvpn \
