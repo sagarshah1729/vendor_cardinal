@@ -155,10 +155,6 @@ vendor/cardinal/prebuilt/common/bin/72-mixplorer.sh:system/addon.d/72-mixplorer.
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/cardinal/overlay/common
 
-# Bootanimation
-PRODUCT_COPY_FILES += \
-    vendor/cardinal/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
-
 # Versioning System
 # Cardinal-AOSP first version.
 PRODUCT_VERSION_MAJOR = 6.0.1
