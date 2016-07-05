@@ -135,6 +135,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cardinal/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
 
+# Chromium	
+PRODUCT_COPY_FILES += \
+vendor/cardinal/prebuilt/common/app/Chromium/chromium.apk:system/priv-app/Chromium/chromium.apk
+	
 # MiXplorer
 PRODUCT_COPY_FILES += \
 vendor/cardinal/prebuilt/common/app/MiXplorer/mixplorer.apk:system/app/MiXplorer/mixplorer.apk \
@@ -176,7 +180,6 @@ PRODUCT_PACKAGES += \
     Eleven \
     Camera2 \
     Launcher3 \
-    Browser \
     CardinalOTA \
     AudioFX
 
